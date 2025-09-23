@@ -1,0 +1,32 @@
+#
+#
+#services:
+#  postgres:
+#    image: postgres:15
+#    container_name: carthatamaz-db
+#    environment:
+#      POSTGRES_DB: carthatamaz
+#      POSTGRES_USER: admin
+#      POSTGRES_PASSWORD: admin
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+#
+#volumes:
+#  postgres_data:
+
+
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: carthatamaz-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: carthatamaz
+
+volumes:
+  mongo_data:
